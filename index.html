@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>💗 I LOVE YOU WIFE // FROM TUMHARA GUSSAIL PATI 💗</title>
+    <title>💗 I LOVE YOU MY WIFE // FROM TUMHARA GUSSAIL PATI 💗</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;600;700&family=Share+Tech+Mono&display=swap');
 
@@ -206,7 +206,7 @@
 
         .main-heading {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.42rem;
             font-weight: 900;
             background: linear-gradient(90deg, #ff69b4, #ffffff, #ffb6c1, #ff1493, #ff69b4);
             background-size: 200% auto;
@@ -215,6 +215,7 @@
             animation: shineText 3s linear infinite;
             filter: drop-shadow(0 0 12px rgba(255, 20, 147, 0.7));
             margin-bottom: 6px;
+            letter-spacing: 0.5px;
         }
 
         @keyframes shineText {
@@ -273,15 +274,20 @@
         }
 
         .sorry-title {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             font-weight: 700;
             color: #ffb6c1;
             text-shadow: 0 0 8px #ff1493;
-            margin-bottom: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
+            margin-bottom: 8px;
+            line-height: 1.45;
+        }
+
+        .sorry-title span.sub-en {
+            display: block;
+            font-size: 0.84rem;
+            color: #ff69b4;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+            margin-top: 2px;
         }
 
         .sorry-text {
@@ -460,7 +466,7 @@
     <!-- STEP 2: MAIN LOVE & DEEP APOLOGY GREETING CARD -->
     <div id="wish-screen">
         <div class="top-mantra">🌸 मेरी हमसफ़र • मेरी ज़िंदगी • मेरी प्यारी वाइफ 🌸</div>
-        <div class="main-heading">I LOVE YOU WIFE</div>
+        <div class="main-heading">I LOVE YOU MY WIFE</div>
         <div class="guest-banner" id="guest-display">👑 खास मेरी प्यारी वाइफ (My Pink Queen) के लिए 👑</div>
 
         <!-- Animated Romantic Pink Hearts & Roses -->
@@ -472,7 +478,10 @@
 
         <!-- Deep Emotional & Tearful Apology Section -->
         <div class="sorry-card">
-            <div class="sorry-title">🥺 हाथ जोड़कर दिल से माफ़ी (I Am Sorry Wife) 🙏</div>
+            <div class="sorry-title">
+                🥺 हाथ जोड़कर दिल से माफ़ी 🙏
+                <span class="sub-en">(I Am Sorry My World Best Wife)</span>
+            </div>
             <div class="sorry-text" id="sorry-text-box">
                 मेरी प्यारी वाइफ, आज मेरा दिल बहुत भारी है और मैं खुद की गलती पर बहुत शर्मिंदा हूँ। 😢 गुस्से में आकर मैंने जो <b>तुम्हें और तुम्हारे मम्मी-पापा (Parents)</b> को गलत शब्द कहे, उसके लिए मैं तुम्हारे सामने हाथ जोड़कर और कान पकड़कर दिल से माफ़ी मांगता हूँ। 🙏<br><br>
                 तुम जानती हो मैं तुमसे पागलपन की हद तक प्यार करता हूँ। जब तुम मुझे गुस्सा दिलाती हो तो मैं अपना आपा खो बैठता हूँ, पर गुस्सा उतरते ही मेरी जान निकल जाती है। तुम्हारे मम्मी-पापा मेरे भी अपने हैं, गुस्से की उस बुरी घड़ी में मेरे मुँह से जो निकला उसका मुझे बहुत दर्द और पछतावा है। प्लीज अपने इस नादान और <b>गुस्सैल पति</b> को माफ़ कर दो, तुम्हारे बिना मैं जी नहीं सकता! 💗😭🌷
@@ -482,7 +491,7 @@
 
         <!-- Pyar & Dard Bhari Shayari Section -->
         <div class="shayari-card">
-            <div class="shayari-label">💌 SPECIAL SHAYARI FOR MY LOVELY WIFE 💌</div>
+            <div class="shayari-label">💌 SPECIAL SHAYARI FOR MY WORLD BEST WIFE 💌</div>
             <div class="shayari-text" id="shayari-box">
                 गुस्से में कह जाता हूँ वो बातें जो दिल में कभी होती नहीं,<br>
                 तेरी आँखों में आँसू देख कर मेरी रूह भी चैन से सोती नहीं।<br>
@@ -528,7 +537,7 @@
 
         // 2. Boot Screen Typewriter
         const bootMessages = [
-            "> Connecting to My Lovely Wife's Heart... 💗",
+            "> Connecting to My World Best Wife... 💗",
             "> Loading Her Favorite Pink World... 🌸",
             "> Carrying Tearful Sorry & Endless Love... 🥺🙏",
             "> From: Tumhara Gussail Pati ❤️"
@@ -560,10 +569,10 @@
 
         // Sweet Romantic Music Box Melody Notes (in Hz)
         const romanticNotes = [
-            523.25, 659.25, 783.99, 1046.50, 783.99, 659.25, // C5 E5 G5 C6 G5 E5
-            440.00, 523.25, 659.25, 880.00, 659.25, 523.25,  // A4 C5 E5 A5 E5 C5
-            349.23, 440.00, 523.25, 698.46, 523.25, 440.00,  // F4 A4 C5 F5 C5 A4
-            392.00, 493.88, 587.33, 783.99, 587.33, 493.88   // G4 B4 D5 G5 D5 B4
+            523.25, 659.25, 783.99, 1046.50, 783.99, 659.25,
+            440.00, 523.25, 659.25, 880.00, 659.25, 523.25,
+            349.23, 440.00, 523.25, 698.46, 523.25, 440.00,
+            392.00, 493.88, 587.33, 783.99, 587.33, 493.88
         ];
         let noteIdx = 0;
 
@@ -581,7 +590,6 @@
             osc.type = 'sine';
             osc.frequency.setValueAtTime(freq, now);
 
-            // Soft piano/music-box envelope
             gain.gain.setValueAtTime(0.001, now);
             gain.gain.linearRampToValueAtTime(volume, now + 0.05);
             gain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
@@ -636,14 +644,14 @@
             playRomanticChime();
             const btn = document.getElementById('forgiveBtn');
             btn.classList.add('forgiven');
-            btn.innerHTML = "🥰 Thank You Meri Pyari Wife! I Love You So Much! 💗";
+            btn.innerHTML = "🥰 Thank You My World Best Wife! I Love You! 💗";
             document.getElementById('sorry-text-box').innerHTML = 
-                "<b>मेरी प्यारी वाइफ, तुम्हारा दिल सच में बहुत बड़ा है! 💗😭</b><br>मुझ जैसे गुस्सैल पति को समझने और माफ़ करने के लिए दिल से शुक्रिया। मैं तुमसे वादा करता हूँ कि आगे से अपने गुस्से पर काबू रखूँगा और तुम्हें व तुम्हारे मम्मी-पापा को हमेशा पूरा सम्मान और ढेर सारा प्यार दूँगा! 🌷👑💖";
+                "<b>मेरी प्यारी वाइफ, तुम सच में दुनिया की सबसे बेस्ट वाइफ (World Best Wife) हो! 💗😭</b><br>मुझ जैसे गुस्सैल पति को समझने और माफ़ करने के लिए दिल से शुक्रिया। मैं तुमसे वादा करता हूँ कि आगे से अपने गुस्से पर काबू रखूँगा और तुम्हें व तुम्हारे मम्मी-पापा को हमेशा पूरा सम्मान और ढेर सारा प्यार दूँगा! 🌷👑💖";
             
             spawnFloatingHearts(window.innerWidth * 0.5, window.innerHeight * 0.6, 30);
         }
 
-        // 6. ROMANTIC PINK BOKEH + FLOATING HEARTS CANVAS (Silent & Smooth)
+        // 6. ROMANTIC PINK BOKEH + FLOATING HEARTS CANVAS
         const canvas = document.getElementById('loveCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -654,7 +662,6 @@
             canvas.height = window.innerHeight;
         });
 
-        // Soft Glowing Pink Bokeh Circles in Background
         const bokehCircles = Array.from({ length: 22 }, () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -664,13 +671,11 @@
             color: Math.random() > 0.5 ? '#ff1493' : '#ffb6c1'
         }));
 
-        // Falling Pink Romantic Symbols
         const pinkSymbols = ["💗", "🌸", "💕", "🌷", "💖", "✨", "💝", "🌸"];
         const colWidth = 34;
         const columns = Math.floor(canvas.width / colWidth);
         const drops = Array(columns).fill(0).map(() => Math.random() * -30);
 
-        // Interactive Rising Mini Hearts
         let risingHearts = [];
 
         function spawnFloatingHearts(x, y, count = 12) {
@@ -697,7 +702,6 @@
         function renderCanvas() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // 1. Draw Soft Pink Bokeh Glows
             bokehCircles.forEach(b => {
                 ctx.save();
                 ctx.globalAlpha = b.alpha;
@@ -716,7 +720,6 @@
                 }
             });
 
-            // 2. Draw Gentle Falling Pink Hearts & Flowers
             ctx.font = "16px sans-serif";
             for (let i = 0; i < drops.length; i++) {
                 const item = pinkSymbols[(i + Math.floor(drops[i])) % pinkSymbols.length];
@@ -728,7 +731,6 @@
                 drops[i] += 0.22;
             }
 
-            // 3. Draw Rising Love Hearts on Tap
             for (let i = risingHearts.length - 1; i >= 0; i--) {
                 let h = risingHearts[i];
                 h.x += h.vx;
@@ -757,7 +759,7 @@
                 ? customReply 
                 : "चलो अपने इस गुस्सैल पति को माफ़ कर दिया! 🥰 आगे से गुस्सा मत करना, I Love You Too! 💗🌷";
 
-            const msg = `💗👑 *Reply From Your Lovely Wife:* \n\n"${replyText}"\n\n🌸 *For: Mera Gussail Pati* ❤️💑`;
+            const msg = `💗👑 *Reply From Your World Best Wife:* \n\n"${replyText}"\n\n🌸 *For: Mera Gussail Pati* ❤️💑`;
             window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
