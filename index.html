@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>💖 FOR MY QUEEN // SPECIAL LOVE & SORRY CARD 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;600;700&family=Share+Tech+Mono&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            background-color: #07010a;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 25px 0;
+        }
+
+        /* Background Romantic Matrix + Heart Fireworks Canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Top Hanging Romantic Fairy Lights */
+        .light-rope {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 15;
+            padding: 0 5px;
+            pointer-events: none;
+        }
+
+        .bulb {
+            width: 12px;
+            height: 18px;
+            border-radius: 50%;
+            background: #ff0055;
+            animation: glowBulb 1s infinite alternate;
+        }
+
+        .bulb:nth-child(odd) {
+            background: #ffcc00;
+            animation-duration: 0.7s;
+        }
+
+        .bulb:nth-child(3n) {
+            background: #00ffcc;
+            animation-duration: 1.2s;
+        }
+
+        @keyframes glowBulb {
+            0% { transform: translateY(0) scale(0.9); box-shadow: 0 0 8px currentColor; opacity: 0.7; }
+            100% { transform: translateY(3px) scale(1.1); box-shadow: 0 0 22px currentColor, 0 0 35px #ff0055; opacity: 1; }
+        }
+
+        /* ================= LOCK SCREEN ================= */
+        #lock-screen {
+            position: relative;
+            z-index: 10;
+            background: rgba(20, 4, 28, 0.9);
+            border: 2px solid #ff0055;
+            box-shadow: 0 0 35px rgba(255, 0, 85, 0.45), inset 0 0 20px rgba(255, 204, 0, 0.2);
+            border-radius: 20px;
+            padding: 28px 20px;
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+        }
+
+        .warrior-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff0055, #b30059, #ff6600);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            box-shadow: 0 0 15px #ff0055;
+        }
+
+        .lock-heart {
+            font-size: 3.5rem;
+            margin: 5px 0;
+            filter: drop-shadow(0 0 18px #ff0055);
+            animation: beatHeart 1.2s infinite ease-in-out;
+        }
+
+        @keyframes beatHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.18); }
+        }
+
+        .typewriter {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.88rem;
+            color: #00ffcc;
+            margin: 15px 0 22px;
+            min-height: 85px;
+            line-height: 1.55;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 3px solid #ff0055;
+        }
+
+        .unlock-btn {
+            background: linear-gradient(45deg, #ff0055, #ff6600, #ffcc00);
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 13px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 25px #ff0055;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+            animation: pulseBtn 1.5s infinite;
+            width: 100%;
+        }
+
+        @keyframes pulseBtn {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px #ff0055; }
+            50% { transform: scale(1.04); box-shadow: 0 0 35px #ffcc00, 0 0 15px #ff0055; }
+        }
+
+        /* ================= MAIN LOVE & SORRY GREETING CARD ================= */
+        #wish-screen {
+            display: none;
+            position: relative;
+            z-index: 10;
+            background: linear-gradient(145deg, rgba(28, 6, 35, 0.92), rgba(10, 4, 20, 0.95));
+            border: 2px solid #ff0055;
+            box-shadow: 0 0 45px rgba(255, 0, 85, 0.5), inset 0 0 25px rgba(255, 204, 0, 0.2);
+            border-radius: 22px;
+            padding: 18px 15px;
+            width: 93%;
+            max-width: 410px;
+            text-align: center;
+            backdrop-filter: blur(14px);
+            animation: royalReveal 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes royalReveal {
+            from { opacity: 0; transform: scale(0.6) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .top-mantra {
+            font-size: 0.78rem;
+            color: #ffcc00;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-shadow: 0 0 8px #ff0055;
+            margin-bottom: 2px;
+        }
+
+        .main-heading {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff0055, #ffcc00, #ffffff, #00ffcc, #ff0055);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 3s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 85, 0.6));
+            margin-bottom: 6px;
+        }
+
+        @keyframes shineText {
+            to { background-position: 200% center; }
+        }
+
+        .guest-banner {
+            display: inline-block;
+            background: rgba(255, 0, 85, 0.15);
+            border: 1px solid #ff0055;
+            color: #ffcc00;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 3px 14px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+        }
+
+        /* Animated Glowing Heart Row */
+        .heart-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin: 4px auto 10px;
+        }
+
+        .side-rose {
+            font-size: 1.7rem;
+            filter: drop-shadow(0 0 10px #ff0055);
+            animation: floatIcon 2s infinite ease-in-out alternate;
+        }
+
+        .center-heart-badge {
+            font-size: 2.6rem;
+            filter: drop-shadow(0 0 20px #ff0055);
+            animation: beatHeart 1s infinite ease-in-out;
+        }
+
+        @keyframes floatIcon {
+            from { transform: translateY(-4px) rotate(-8deg); }
+            to { transform: translateY(4px) rotate(8deg); }
+        }
+
+        /* Special Emotional Sorry Box */
+        .sorry-card {
+            background: linear-gradient(135deg, rgba(255, 0, 85, 0.18), rgba(0, 0, 0, 0.75));
+            border: 1.5px dashed #ffcc00;
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 12px;
+            text-align: center;
+            box-shadow: 0 0 18px rgba(255, 0, 85, 0.25);
+        }
+
+        .sorry-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sorry-text {
+            font-size: 0.84rem;
+            line-height: 1.55;
+            color: #ffe6f0;
+        }
+
+        .forgive-btn {
+            margin-top: 9px;
+            background: linear-gradient(90deg, #ffcc00, #ff6600);
+            color: #000;
+            border: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 7px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 12px #ffcc00;
+            transition: 0.3s;
+        }
+
+        .forgive-btn.forgiven {
+            background: linear-gradient(90deg, #00ffcc, #00b359);
+            color: #000;
+            box-shadow: 0 0 18px #00ffcc;
+        }
+
+        /* Romantic Shayari Card */
+        .shayari-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1.5px solid rgba(0, 255, 204, 0.55);
+            border-radius: 14px;
+            padding: 13px 11px;
+            margin-bottom: 12px;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.15);
+        }
+
+        .shayari-label {
+            font-size: 0.72rem;
+            color: #00ffcc;
+            font-family: 'Share Tech Mono', monospace;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .shayari-text {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #fff8e7;
+            font-weight: 600;
+            text-shadow: 0 1px 4px #000;
+        }
+
+        .shayari-text span.highlight {
+            color: #ffcc00;
+            font-weight: 700;
+        }
+
+        .shayari-text span.love {
+            color: #ff3377;
+            font-weight: 700;
+        }
+
+        .next-shayari-btn {
+            margin-top: 9px;
+            background: rgba(0, 255, 204, 0.15);
+            border: 1px solid #00ffcc;
+            color: #00ffcc;
+            font-size: 0.76rem;
+            padding: 5px 14px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .next-shayari-btn:active {
+            background: #00ffcc;
+            color: #000;
+        }
+
+        /* Husband Royal Badge */
+        .warrior-credit-box {
+            background: linear-gradient(90deg, rgba(255,0,85,0.2), rgba(255,153,0,0.2), rgba(0,255,204,0.2));
+            border: 1px solid #ff0055;
+            border-radius: 10px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .credit-label {
+            font-size: 0.7rem;
+            color: #ffccd9;
+            letter-spacing: 1px;
+        }
+
+        .warrior-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ff0055;
+            letter-spacing: 1px;
+        }
+
+        /* WhatsApp Love Reply Bar */
+        .share-container {
+            display: flex;
+            gap: 6px;
+        }
+
+        .name-input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1.5px solid #ff0055;
+            color: #ffffff;
+            padding: 9px 12px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            outline: none;
+        }
+
+        .name-input::placeholder {
+            color: #ffb3cc;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #ff0055, #ff6600);
+            color: #fff;
+            border: none;
+            padding: 9px 13px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Glowing Fairy Lights -->
+    <div class="light-rope">
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+    </div>
+
+    <!-- Background Love Matrix & Heart Fireworks Canvas -->
+    <canvas id="loveCanvas"></canvas>
+
+    <!-- STEP 1: SECRET HEART LOCK SCREEN -->
+    <div id="lock-screen">
+        <div class="warrior-tag">👑 QUEEN OF MY HEART EDITION 👑</div>
+        <div class="lock-heart">💝</div>
+        <div class="typewriter" id="terminal-text"></div>
+        <button class="unlock-btn" onclick="openRoyalWish()">💖 मेरे दिल का पैगाम खोलो 💖</button>
+    </div>
+
+    <!-- STEP 2: MAIN LOVE & SORRY GREETING CARD -->
+    <div id="wish-screen">
+        <div class="top-mantra">✨ मेरी हमसफ़र • मेरी ज़िंदगी • मेरी जान ✨</div>
+        <div class="main-heading">I LOVE YOU JAAN</div>
+        <div class="guest-banner" id="guest-display">👑 खास मेरी प्यारी वाइफ के लिए 👑</div>
+
+        <!-- Animated Romantic Hearts & Roses -->
+        <div class="heart-row">
+            <div class="side-rose">🌹</div>
+            <div class="center-heart-badge">💖</div>
+            <div class="side-rose">🌹</div>
+        </div>
+
+        <!-- Heartfelt Sorry Message Section -->
+        <div class="sorry-card">
+            <div class="sorry-title">🥺 दिल से एक प्यारी सी माफ़ी (I Am Sorry) 🙏</div>
+            <div class="sorry-text" id="sorry-text-box">
+                मेरी जान, अगर मेरी किसी भी बात, गुस्से या नादानी से तुम्हारा दिल दुखा हो, तो मैं कान पकड़ कर दिल से <b>SORRY</b> बोलता हूँ। तुम मेरी ज़िंदगी की सबसे खूबसूरत दुआ हो। तुमसे रूठ कर या तुम्हें उदास देख कर मेरा एक पल भी नहीं कटता। प्लीज अब गुस्सा छोड़ दो और एक प्यारी सी मुस्कान दे दो! ❤️🌹
+            </div>
+            <button class="forgive-btn" id="forgiveBtn" onclick="acceptApology()">💝 मुझे माफ़ किया? (यहाँ टैप करो)</button>
+        </div>
+
+        <!-- Pyar Bhari Shayari Section -->
+        <div class="shayari-card">
+            <div class="shayari-label">💌 SPECIAL SHAYARI FOR MY WIFE 💌</div>
+            <div class="shayari-text" id="shayari-box">
+                हज़ारों महफ़िलें हैं और लाखों मेले हैं,<br>
+                पर जहाँ तुम नहीं वहाँ हम बिल्कुल अकेले हैं।<br>
+                मेरी हर सांस, हर धड़कन पर नाम सिर्फ़ तुम्हारा है,<br>
+                तुम सिर्फ़ मेरी <span class="love">पत्नी</span> नहीं, मेरा <span class="highlight">पूरा संसार</span> हो! ❤️👑
+            </div>
+            <button class="next-shayari-btn" onclick="changeShayari()">🔄 अगली प्यार भरी शायरी पढ़ें 💖</button>
+        </div>
+
+        <!-- Sender Branding -->
+        <div class="warrior-credit-box">
+            <div class="credit-label">💑 तुम्हारे चेहरे की मुस्कान का आशिक़ 💑</div>
+            <div class="warrior-name" id="sender-display">❤️ तुम्हारा अपना JAMAL ❤️</div>
+        </div>
+
+        <!-- Direct Love Reply Bar -->
+        <div class="share-container">
+            <input type="text" id="replyInput" class="name-input" placeholder="यहाँ अपने दिल की बात लिखो जान...">
+            <button class="whatsapp-btn" onclick="sendReplyToHusband()">Reply भेजो 💌</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Optional Custom URL Support (?to=WifeName)
+        const params = new URLSearchParams(window.location.search);
+        const wifeName = params.get('to');
+        if (wifeName) {
+            document.getElementById('guest-display').innerText = "👑 मेरी प्यारी हमसफ़र: " + wifeName.toUpperCase() + " ❤️";
+        }
+
+        // 2. Romantic & Heart-Touching Shayari Collection for Wife
+        const shayaris = [
+            `हज़ारों महफ़िलें हैं और लाखों मेले हैं,<br>पर जहाँ तुम नहीं वहाँ हम बिल्कुल अकेले हैं।<br>मेरी हर सांस, हर धड़कन पर नाम सिर्फ़ तुम्हारा है,<br>तुम सिर्फ़ मेरी <span class="love">पत्नी</span> नहीं, मेरा <span class="highlight">पूरा संसार</span> हो! ❤️👑`,
+
+            `थोड़ी तकरार, थोड़ा गुस्सा, पर प्यार बेहिसाब है,<br>मेरी ज़िंदगी की किताब का तू सबसे हसीन ख़्वाब है।<br>गलतियाँ हो जाती हैं मुझसे, पर इरादा कभी गलत नहीं,<br>तेरे चेहरे की <span class="highlight">एक मुस्कान</span> ही मेरी असली ताक़त है! 🌹✨`,
+
+            `ना चाँद की चाहत है, ना तारों की फ़रमाइश है,<br>हर जनम में तू मेरी बने, बस यही एक ख़्वाहिश है।<br>रूठना मत कभी मुझसे ऐ मेरी <span class="love">जान-ए-ज़िंदगी</span>,<br>क्योंकि तुझसे ही शुरू और तुझ पर ही ख़त्म मेरी हर खुशी है! 💖💑`,
+
+            `मेरे गुस्से में भी तेरे लिए फ़िक्र छुपी होती है,<br>तेरे बिना मेरी हर एक शाम अधूरी होती है।<br><span class="highlight">I am Sorry</span> कह कर तुझे सीने से लगाना है,<br>क्योंकि अपनी रानी को मनाना ही मेरी सबसे बड़ी खुशी होती है! 🥺❤️`,
+
+            `दुनिया के लिए तुम एक इंसान हो,<br>पर मेरे लिए तुम मेरी पूरी जहान हो।<br>लाख शिकवे सही, पर मोहब्बत कभी कम न होगी,<br>जब तक सांस चलेगी, हर धड़कन <span class="love">सिर्फ़ तुम्हारे नाम</span> होगी! 💌✨`
+        ];
+        let currentShayari = 0;
+
+        function changeShayari() {
+            playClickBeep();
+            currentShayari = (currentShayari + 1) % shayaris.length;
+            document.getElementById('shayari-box').innerHTML = shayaris[currentShayari];
+        }
+
+        // 3. Boot Screen Romantic Typewriter
+        const bootMessages = [
+            "> Connecting to My Queen's Heart... 💖",
+            "> Scanning Love Level: 1000% Infinite ♾️",
+            "> Uploading Heartfelt Sorry & Hugs... 🥺🌹",
+            "> Sender: Your Loving Husband JAMAL ❤️"
+        ];
+        let mIdx = 0, cIdx = 0;
+        const termBox = document.getElementById('terminal-text');
+
+        function typeWriterEffect() {
+            if (mIdx < bootMessages.length) {
+                if (cIdx < bootMessages[mIdx].length) {
+                    termBox.innerHTML += bootMessages[mIdx].charAt(cIdx);
+                    cIdx++;
+                    setTimeout(typeWriterEffect, 28);
+                } else {
+                    termBox.innerHTML += "<br>";
+                    mIdx++;
+                    cIdx = 0;
+                    setTimeout(typeWriterEffect, 200);
+                }
+            }
+        }
+        typeWriterEffect();
+
+        // 4. Web Audio API Romantic Chime & Celebration Sounds
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new AudioCtx();
+        }
+
+        function playRomanticMelody() {
+            initAudio();
+            const now = audioCtx.currentTime;
+            const melody = [523.25, 659.25, 783.99, 987.77, 1046.50, 1318.51];
+            melody.forEach((freq, i) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now + i * 0.1);
+                gain.gain.setValueAtTime(0.18, now + i * 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.45);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now + i * 0.1);
+                osc.stop(now + i * 0.1 + 0.45);
+            });
+        }
+
+        function playClickBeep() {
+            initAudio();
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(750, now);
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.12);
+        }
+
+        function playSparklePop() {
+            if (!audioCtx) return;
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(420, now);
+            osc.frequency.exponentialRampToValueAtTime(120, now + 0.2);
+            gain.gain.setValueAtTime(0.08, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.2);
+        }
+
+        // 5. Unlock Greeting Card
+        let celebrationActive = false;
+        function openRoyalWish() {
+            playRomanticMelody();
+            document.getElementById('lock-screen').style.display = 'none';
+            document.getElementById('wish-screen').style.display = 'block';
+            celebrationActive = true;
+            createHeartBurst(window.innerWidth * 0.2, window.innerHeight * 0.25);
+            createHeartBurst(window.innerWidth * 0.8, window.innerHeight * 0.25);
+        }
+
+        // 6. Special "Forgive Me" Button Action
+        function acceptApology() {
+            playRomanticMelody();
+            const btn = document.getElementById('forgiveBtn');
+            btn.classList.add('forgiven');
+            btn.innerHTML = "🥰 Thank You Meri Jaan! I Love You Forever! 💑";
+            document.getElementById('sorry-text-box').innerHTML = 
+                "<b>यही तो मेरी रानी की सबसे प्यारी बात है! ❤️</b><br>तुम्हारी एक मुस्कान से मेरी सारी टेंशन दूर हो गई। वादा है हमेशा तुम्हें पलकों पर बिठा कर रखूँगा! 🌹👑✨";
+            
+            // Massive celebration burst
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createHeartBurst(
+                        Math.random() * window.innerWidth * 0.8 + window.innerWidth * 0.1,
+                        Math.random() * window.innerHeight * 0.5 + 50
+                    );
+                }, i * 180);
+            }
+        }
+
+        // 7. ROMANTIC HEART MATRIX + SPARKLE BURST CANVAS
+        const canvas = document.getElementById('loveCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        const loveSymbols = ["❤️", "💖", "🌹", "✨", "💝", "👑", "💑", "💌", "🌸", "❤️"];
+        const colWidth = 30;
+        const columns = Math.floor(canvas.width / colWidth);
+        const drops = Array(columns).fill(0).map(() => Math.random() * -30);
+
+        let sparks = [];
+        const burstColors = ['#ff0055', '#ffcc00', '#00ffcc', '#ff66b3', '#ff3300', '#ffffff'];
+
+        function createHeartBurst(x, y) {
+            playSparklePop();
+            const color = burstColors[Math.floor(Math.random() * burstColors.length)];
+            for (let i = 0; i < 34; i++) {
+                const angle = (Math.PI * 2 * i) / 34;
+                const speed = Math.random() * 3.8 + 1.2;
+                sparks.push({
+                    x: x,
+                    y: y,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    alpha: 1,
+                    color: color
+                });
+            }
+        }
+
+        window.addEventListener('click', (e) => {
+            if (celebrationActive && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+                createHeartBurst(e.clientX, e.clientY);
+            }
+        });
+
+        function renderCanvas() {
+            ctx.fillStyle = 'rgba(7, 1, 10, 0.18)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.font = "16px sans-serif";
+            for (let i = 0; i < drops.length; i++) {
+                const item = loveSymbols[Math.floor(Math.random() * loveSymbols.length)];
+                ctx.fillStyle = (i % 2 === 0) ? '#ff0055' : '#ffcc00';
+                ctx.fillText(item, i * colWidth, drops[i] * 24);
+
+                if (drops[i] * 24 > canvas.height && Math.random() > 0.96) {
+                    drops[i] = 0;
+                }
+                drops[i] += 0.32;
+            }
+
+            if (celebrationActive) {
+                if (Math.random() < 0.04) {
+                    createHeartBurst(
+                        Math.random() * canvas.width,
+                        Math.random() * (canvas.height * 0.45) + 40
+                    );
+                }
+
+                for (let i = sparks.length - 1; i >= 0; i--) {
+                    let s = sparks[i];
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    s.vy += 0.035;
+                    s.alpha -= 0.02;
+
+                    if (s.alpha <= 0) {
+                        sparks.splice(i, 1);
+                    } else {
+                        ctx.save();
+                        ctx.globalAlpha = s.alpha;
+                        ctx.fillStyle = s.color;
+                        ctx.shadowBlur = 12;
+                        ctx.shadowColor = s.color;
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, 2.8, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                }
+            }
+
+            requestAnimationFrame(renderCanvas);
+        }
+        renderCanvas();
+
+        // 8. Direct WhatsApp Reply Function for Wife
+        function sendReplyToHusband() {
+            const customReply = document.getElementById('replyInput').value.trim();
+            const replyText = customReply 
+                ? customReply 
+                : "मैंने तुम्हें माफ़ कर दिया जान! 🥰 मुझे भी तुमसे बहुत प्यार है ❤️💑";
+
+            const msg = `💖👑 *Reply From Your Queen:* \n\n"${replyText}"\n\n✨ *I Love You Too Jamal!* ❤️🌹`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
